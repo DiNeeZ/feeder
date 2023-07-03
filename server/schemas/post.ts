@@ -1,28 +1,39 @@
-import {type} from 'os'
-import {list} from 'postcss'
 import {SchemaTypeDefinition} from 'sanity'
 
 const post: SchemaTypeDefinition = {
   name: 'post',
   type: 'document',
   title: 'Post',
+  groups: [
+    {
+      name: 'content',
+      title: 'Content',
+    },
+    {
+      name: 'meta',
+      title: 'Meta',
+    },
+  ],
   fields: [
     {
       name: 'meta_title',
       type: 'string',
       title: 'Meta Title',
+      group: 'meta',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'title',
       type: 'string',
       title: 'Title',
+      group: 'content',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'publishedDate',
       type: 'date',
       title: 'Published Date',
+      group: 'content',
       options: {
         dateFormat: 'DD-MM-YYYY',
         calendarTodayLabel: 'Today',
@@ -33,6 +44,7 @@ const post: SchemaTypeDefinition = {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
+      group: 'content',
       validation: (Rule) => Rule.required(),
       options: {
         source: 'title',
@@ -44,6 +56,7 @@ const post: SchemaTypeDefinition = {
       title: 'Cover',
       name: 'cover',
       type: 'image',
+      group: 'content',
       options: {
         hotspot: true,
       },
@@ -61,12 +74,14 @@ const post: SchemaTypeDefinition = {
       name: 'description',
       type: 'text',
       title: 'Description',
+      group: 'content',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'body',
       type: 'array',
       title: 'Body content',
+      group: 'content',
       validation: (Rule) => Rule.required(),
       of: [
         {type: 'block'},
