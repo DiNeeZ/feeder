@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-300;
+  @apply text-neutral-800 bg-wheat;
 }

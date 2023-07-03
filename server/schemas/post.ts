@@ -6,12 +6,12 @@ const post: SchemaTypeDefinition = {
   title: 'Post',
   groups: [
     {
-      name: 'content',
-      title: 'Content',
-    },
-    {
       name: 'meta',
       title: 'Meta',
+    },
+    {
+      name: 'content',
+      title: 'Content',
     },
   ],
   fields: [
