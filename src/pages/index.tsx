@@ -1,14 +1,16 @@
 import Layout from "@/components/layout";
 import Hero from "@/components/hero";
 import AboutSection from "@/components/about-section";
+import BlogSection from "@/components/blog-section";
+import ContactsSection from "@/components/contacts-section";
 
 const Home = () => {
   return (
     <Layout>
       <Hero />
-      <div className="container mx-auto">
-        <AboutSection />
-      </div>
+      <AboutSection />
+      <BlogSection />
+      <ContactsSection />
     </Layout>
   );
 };

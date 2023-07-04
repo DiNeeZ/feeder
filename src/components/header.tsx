@@ -3,6 +3,7 @@ import Logo from "./logo";
 import MenuNavLink from "./ui/menu-nav-link";
 
 import { Teko } from "next/font/google";
+import Link from "next/link";
 
 const teko = Teko({
   subsets: ["latin"],
@@ -16,7 +17,9 @@ const Header = () => {
         <nav className="flex justify-between items-center">
           <div className="flex items-center gap-2">
             <Logo size={40} />
-            <span className={`${teko.className} text-4xl`}>Feeder</span>
+            <Link href="/" className={`${teko.className} text-4xl`}>
+              Feeder
+            </Link>
           </div>
 
           <ul className="flex items-center gap-4">
