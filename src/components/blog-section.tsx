@@ -1,18 +1,12 @@
 import React from "react";
 import More from "./ui/more";
 import SectionTitle from "./ui/section-title";
+import Section from './ui/section';
 
-const BlogSection = () => {
-  return (
-    <section className="mb-24">
-      <div className="container mx-auto">
-        <div className="flex items-center justify-between">
-          <SectionTitle>Our Blog</SectionTitle>
-          <More href="/blog" />
-        </div>
-      </div>
-    </section>
-  );
-};
+const BlogSection = () => (
+  <Section title='Our Blog' href='/blog'>
+    Blog
+  </Section>
+);
 
 export default BlogSection;

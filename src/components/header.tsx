@@ -1,9 +1,10 @@
 import React from "react";
 import Logo from "./logo";
-import MenuNavLink from "./ui/menu-nav-link";
+
+import Link from "next/link";
+import NavMenu from './ui/menu';
 
 import { Teko } from "next/font/google";
-import Link from "next/link";
 
 const teko = Teko({
   subsets: ["latin"],
@@ -12,7 +13,7 @@ const teko = Teko({
 
 const Header = () => {
   return (
-    <header>
+    <header className='px-12'>
       <div className="container mx-auto py-6">
         <nav className="flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -21,21 +22,7 @@ const Header = () => {
               Feeder
             </Link>
           </div>
-
-          <ul className="flex items-center gap-4">
-            <li>
-              <MenuNavLink href="/">Home</MenuNavLink>
-            </li>
-            <li>
-              <MenuNavLink href="/blog">Blog</MenuNavLink>
-            </li>
-            <li>
-              <MenuNavLink href="/about">About</MenuNavLink>
-            </li>
-            <li>
-              <MenuNavLink href="/contacts">Contacts</MenuNavLink>
-            </li>
-          </ul>
+          <NavMenu />
         </nav>
       </div>
     </header>

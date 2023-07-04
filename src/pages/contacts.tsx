@@ -6,23 +6,13 @@ import { TbMailbox, TbPhoneOff } from "react-icons/tb";
 import type { IconType } from "react-icons";
 import { Teko } from "next/font/google";
 import Link from "next/link";
+import ContactCard from '@/components/ui/contact-card';
 
 const teko = Teko({
   subsets: ["latin"],
   weight: ["500"],
 });
 
-type ContactCardProps = {
-  children: ReactNode;
-  Icon: IconType;
-};
-
-const ContactCard = ({ Icon, children }: ContactCardProps) => (
-  <>
-    <Icon size={60} className="mb-12 text-blue-950" />
-    {children}
-  </>
-);
 
 const Contacts = () => {
   return (
@@ -33,7 +23,7 @@ const Contacts = () => {
           className="relative mt-8 pt-12 mb-24 border-t min-h-[400px]  
 				bg-blue-950 border-blue-400 flex items-center rounded-xl overflow-hidden shadow-lg"
         >
-          <div className="max-w-3xl px-16 text-slate-50">
+          <div className="relative z-10 max-w-3xl px-16 text-slate-50">
             <h2 className={`${teko.className} text-4xl mb-8`}>
               Feeder Contacts
             </h2>
@@ -51,15 +41,16 @@ const Contacts = () => {
         </div>
         <ul className="flex">
           <li
-            className="relative grow basis-1/2 flex flex-col text-xl items-center justify-center gap-4 after:w-[1px] after:h-full 
-						after:bg-slate-600 after:absolute after:top-0 after:bottom-0 after:right-0"
+            className="relative grow basis-1/2 flex flex-col text-xl items-center 
+            justify-center gap-4 after:w-[1px] after:h-full after:bg-slate-600 
+            after:absolute after:top-0 after:bottom-0 after:right-0"
           >
             <ContactCard Icon={TbPhoneOff}>
               <p>Don&apos;t call us</p>
               <p>Interested in software in something? Just search online.</p>
               <Link href="tel:+00000000000">
                 Phone number:{" "}
-                <span className="text-sky-600">+0s 000 000 0000</span>
+                <span className="text-sky-600">+0 000 000 0000</span>
               </Link>
             </ContactCard>
           </li>

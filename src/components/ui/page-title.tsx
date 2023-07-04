@@ -8,11 +8,11 @@ const teko = Teko({
 
 const PageTitle = ({ children }: { children: ReactNode }) => {
   return (
-    <div className={`${teko.className} relative`}>
-      <h1 className="text-5xl drop-shadow-md text-blue-950 font-bold tracking-wide">
+    <div className={`${teko.className} relative inline-block`}>
+      <h1 className="text-6xl drop-shadow-md text-blue-950 font-bold tracking-wide">
         {children}
       </h1>
-      <div className="absolute bg-blue-400 w-full bottom-0 left-6 h-1/2 opacity-25 -z-10" />
+      <div className="absolute bg-blue-400 w-full bottom-0 h-1/2 opacity-25 -z-10 ml-12 -skew-x-12" />
     </div>
   );
 };
