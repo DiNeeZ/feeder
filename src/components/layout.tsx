@@ -1,14 +1,21 @@
 import React, { ReactNode } from "react";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import Header from "./header";
+import Footer from "./footer";
+
+import { Mukta } from "next/font/google";
+
+const mukta = Mukta({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+});
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className={`${inter.className}`}>
-      <header>header</header>
-      <main>{children}</main>
-      <footer>footer</footer>
+    <div className={`${mukta.className} flex flex-col min-h-screen`}>
+      <Header />
+      <main className="grow">{children}</main>
+      <Footer />
     </div>
   );
 };
