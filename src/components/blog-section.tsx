@@ -1,12 +1,26 @@
 import React from "react";
-import More from "./ui/more";
-import SectionTitle from "./ui/section-title";
-import Section from './ui/section';
+import Section from "./ui/section";
+import type { Post } from "@/types";
+import { urlFor } from "@/lib/sanity-client";
+import Image from "next/image";
 
-const BlogSection = () => (
-  <Section title='Our Blog' href='/blog'>
-    Blog
-  </Section>
-);
+const BlogSection = ({ posts }: { posts: Post[] }) => {
+  console.log(posts);
+  return (
+    <Section title="Our Blog" href="/blog">
+      {posts.map((post) => (
+        <div key={post._id}>
+          <h3>{post.title}</h3>
+          <Image
+            src={urlFor(post.cover).url()}
+            alt={post.cover.caption}
+            width={40}
+            height={40}
+          />
+        </div>
+      ))}
+    </Section>
+  );
+};
 
 export default BlogSection;

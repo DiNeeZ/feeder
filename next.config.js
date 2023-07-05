@@ -10,6 +10,7 @@ const nextConfig = {
     return config;
   },
   reactStrictMode: true,
+  images: { domains: ["cdn.sanity.io"] },
 };
 
 module.exports = nextConfig;
