@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { client } from "../../lib/sanity-client";
+import { client, postsQuery, postBySlugQuery } from "../../lib/sanity-client";
 
 type Data = {
   name: string;
@@ -12,11 +12,13 @@ export default function posts(req: NextApiRequest, res: NextApiResponse<Data>) {
 }
 
 export async function loadPosts(start: number, end: number) {
-  const query = `{
-    "posts": *[_type == 'post'],
-    "total": count(*[_type == 'post'])
-  }`;
-  const { posts, total } = await client.fetch(query);
+  const { posts, total } = await client.fetch(postsQuery);
 
   return { posts, total };
+}
+
+export async function loadPostBySlug(slug: string) {
+  const post = await client.fetch(postBySlugQuery(slug));
+
+  return post;
 }

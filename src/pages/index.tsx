@@ -13,7 +13,7 @@ interface PostProps {
   total: number;
 }
 
-const Home = ({ posts, total }: PostProps) => {
+const Home = ({ posts }: PostProps) => {
   return (
     <Layout>
       <Hero />
@@ -27,7 +27,7 @@ const Home = ({ posts, total }: PostProps) => {
 export const getServerSideProps: GetServerSideProps<{
   posts: Post[];
 }> = async () => {
-  const { posts, total } = await loadPosts(0, 4);
+  const { posts } = await loadPosts(0, 4);
 
   // If the posts is not found, return notFound - 404 page
   if (posts === null) {
@@ -40,7 +40,6 @@ export const getServerSideProps: GetServerSideProps<{
   return {
     props: {
       posts,
-      total,
     },
   };
 };

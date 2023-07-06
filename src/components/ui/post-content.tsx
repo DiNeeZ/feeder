@@ -1,23 +1,10 @@
-import React from 'react'
-import { PostBody } from '@/types'
+import React from "react";
 import { urlFor } from "@/lib/sanity-client";
 import Image from "next/image";
+import type { PostBody } from "@/types";
 
 const PostContent = ({ content }: { content: PostBody }) => {
+  return <div></div>;
+};
 
-  return (
-    <div>
-      {
-        content.map(item => {
-
-          if (item._type === 'block') return (
-            <p></p>
-          )
-
-        })
-      }
-    </div>
-  )
-}
-
-export default PostContent
+export default PostContent;

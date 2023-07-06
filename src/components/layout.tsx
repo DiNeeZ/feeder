@@ -7,7 +7,7 @@ import { Mukta } from "next/font/google";
 
 const mukta = Mukta({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const Layout = ({ children }: { children: ReactNode }) => {

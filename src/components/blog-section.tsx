@@ -1,26 +1,17 @@
 import React from "react";
 import Section from "./ui/section";
 import type { Post } from "@/types";
-import { urlFor } from "@/lib/sanity-client";
-import Image from "next/image";
-import PostContent from './ui/post-content';
+
+import PostCard from "./ui/post-card";
 
 const BlogSection = ({ posts }: { posts: Post[] }) => {
-
   return (
     <Section title="Our Blog" href="/blog">
-      {posts.map((post) => (
-        <div key={post._id}>
-          <h3>{post.title}</h3>
-          <Image
-            src={urlFor(post.cover).width(500).height(300).url()}
-            alt={post.cover.caption}
-            width={500}
-            height={300}
-          />
-          <PostContent content={post.body} />
-        </div>
-      ))}
+      <div className=" grid lg:grid-cols-2 gap-6 2xl:gap-12">
+        {posts.map((post) => (
+          <PostCard key={post._id} post={post} />
+        ))}
+      </div>
     </Section>
   );
 };
