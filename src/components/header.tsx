@@ -2,7 +2,8 @@ import React from "react";
 import Logo from "./logo";
 
 import Link from "next/link";
-import NavMenu from './ui/menu';
+import Menu from "./ui/menu";
+import MobileMenu from "./ui/mobile-menu";
 
 import { Teko } from "next/font/google";
 
@@ -13,7 +14,7 @@ const teko = Teko({
 
 const Header = () => {
   return (
-    <header className='px-12'>
+    <header className="lg:px-12">
       <div className="container mx-auto py-6">
         <nav className="flex justify-between items-center">
           <div className="flex items-center gap-2">
@@ -22,7 +23,8 @@ const Header = () => {
               Feeder
             </Link>
           </div>
-          <NavMenu />
+          <Menu />
+          <MobileMenu />
         </nav>
       </div>
     </header>

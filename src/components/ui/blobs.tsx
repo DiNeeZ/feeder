@@ -5,7 +5,7 @@ import WhiteBlob from "@/../public/images/blob-2.svg";
 
 const Blobs = () => {
   return (
-    <div className="relative h-full flex items-center justify-center">
+    <div className="hidden md:flex relative h-full items-center justify-center">
       <BlueBlob className="absolute w-full h-full  -translate-x-12 translate-y-6" />
       <WhiteBlob className="absolute w-full h-full" />
       <Image

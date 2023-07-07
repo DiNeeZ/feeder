@@ -14,11 +14,3 @@ export const client = createClient(config);
 const builder = imageUrlBuilder(client);
 
 export const urlFor = (source: any) => builder.image(source);
-
-export const postsQuery = `{
-  "posts": *[_type == 'post'] [0...4],
-  "total": count(*[_type == 'post'])
-}`;
-
-export const postBySlugQuery = (slug: string) =>
-  `*[_type=="post" && slug.current == '${slug}']`;

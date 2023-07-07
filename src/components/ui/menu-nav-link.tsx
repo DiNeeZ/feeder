@@ -16,9 +16,9 @@ const MenuNavLink = ({ children, href }: MenuNavLinkPropsType) => {
       className={`hover:text-blue-500 duration-150 ralative 
       ${
         pathname === href &&
-        `relative hover:text-neutral-400 
-      text-neutral-400 after:w-full after:h-[1px] after:bg-neutral-400
-      after:absolute after:bottom-0 after:left-0`
+        `relative hover:text-neutral-400 text-neutral-400
+        after:hidden md:after:block after:w-full after:h-[1px]
+      after:bg-neutral-400 after:absolute after:bottom-0 after:left-0`
       }`}
     >
       {children}
