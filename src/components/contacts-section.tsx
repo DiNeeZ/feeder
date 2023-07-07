@@ -1,18 +1,17 @@
 import React from "react";
 import { TbMailbox, TbPhoneOff } from "react-icons/tb";
 
-import Section from './ui/section';
-import ContactCard from './ui/contact-card';
-import Link from 'next/link';
+import Section from "./ui/section";
+import ContactCard from "./ui/contact-card";
+import Link from "next/link";
 
 const ContactsSection = () => {
   return (
-    <Section title='Contacts' href='/contacts'>
-      <ul className="flex">
+    <Section title="Contacts" href="/contacts">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-20">
         <li
-          className="relative grow basis-1/2 flex flex-col text-xl items-center 
-            justify-center gap-4 after:w-[1px] after:h-full after:bg-slate-600 
-            after:absolute after:top-0 after:bottom-0 after:right-0"
+          className="relative flex flex-col text-xl items-center 
+            justify-center gap-4 text-center"
         >
           <ContactCard Icon={TbPhoneOff}>
             <p>Don&apos;t call us</p>
@@ -23,7 +22,7 @@ const ContactsSection = () => {
             </Link>
           </ContactCard>
         </li>
-        <li className="grow basis-1/2 text-xl flex flex-col items-center justify-center gap-4">
+        <li className="text-xl flex flex-col items-center justify-center gap-4 text-center">
           <ContactCard Icon={TbMailbox}>
             <p>Don&apos;t email us</p>
             <p>Interested in software in something? Just search online.</p>

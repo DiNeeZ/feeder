@@ -12,7 +12,7 @@ const PageTitle = ({ children }: { children: ReactNode }) => {
       <h1 className="text-6xl drop-shadow-md text-blue-950 font-bold tracking-wide">
         {children}
       </h1>
-      <div className="absolute bg-blue-400 w-full bottom-0 h-1/2 opacity-25 -z-10 ml-12 -skew-x-12" />
+      <div className="absolute bg-blue-400 w-[80%] md:w-full bottom-0 h-1/2 opacity-25 -z-10 lg:ml-12 -skew-x-12" />
     </div>
   );
 };

@@ -10,7 +10,7 @@ const About = () => {
       <div className="container mx-auto pt-12 mb-24 border-t border-blue-400">
         <PageTitle>About</PageTitle>
         {about.map((item, index) => (
-          <div key={item.id} className='px-24'>
+          <div key={item.id}>
             <ImageTextBlock
               imageSrc={item.imageSrc}
               imageAlt={item.title}

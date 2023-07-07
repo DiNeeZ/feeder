@@ -1,18 +1,16 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import Image from "next/image";
 import Layout from "@/components/layout";
 import PageTitle from "@/components/ui/page-title";
 import { TbMailbox, TbPhoneOff } from "react-icons/tb";
-import type { IconType } from "react-icons";
 import { Teko } from "next/font/google";
 import Link from "next/link";
-import ContactCard from '@/components/ui/contact-card';
+import ContactCard from "@/components/ui/contact-card";
 
 const teko = Teko({
   subsets: ["latin"],
   weight: ["500"],
 });
-
 
 const Contacts = () => {
   return (
@@ -20,10 +18,10 @@ const Contacts = () => {
       <div className="container mx-auto pt-8 border-t border-blue-400 mb-24">
         <PageTitle>Contacts</PageTitle>
         <div
-          className="relative mt-8 pt-12 mb-24 border-t min-h-[400px]  
-				bg-blue-950 border-blue-400 flex items-center rounded-xl overflow-hidden shadow-lg"
+          className="relative mt-8 pt-6 md:pt-12 mb-12 md:mb-24 border-t min-h-[400px]  
+				bg-blue-950 border-blue-400 md:flex md:items-center rounded-xl overflow-hidden shadow-lg"
         >
-          <div className="relative z-10 max-w-3xl px-16 text-slate-50">
+          <div className="relative z-10 max-w-3xl px-8 md:px-16 text-slate-50">
             <h2 className={`${teko.className} text-4xl mb-8`}>
               Feeder Contacts
             </h2>
@@ -39,11 +37,10 @@ const Contacts = () => {
           />
           <div className="absolute inset-0 w-full h-full bg-blue-400 opacity-30" />
         </div>
-        <ul className="flex">
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-20">
           <li
-            className="relative grow basis-1/2 flex flex-col text-xl items-center 
-            justify-center gap-4 after:w-[1px] after:h-full after:bg-slate-600 
-            after:absolute after:top-0 after:bottom-0 after:right-0"
+            className="flex flex-col text-xl text-center items-center 
+            justify-center gap-4"
           >
             <ContactCard Icon={TbPhoneOff}>
               <p>Don&apos;t call us</p>
@@ -54,7 +51,7 @@ const Contacts = () => {
               </Link>
             </ContactCard>
           </li>
-          <li className="grow basis-1/2 text-xl flex flex-col items-center justify-center gap-4">
+          <li className="text-xl flex flex-col text-center items-center justify-center gap-4">
             <ContactCard Icon={TbMailbox}>
               <p>Don&apos;t email us</p>
               <p>Interested in software in something? Just search online.</p>
