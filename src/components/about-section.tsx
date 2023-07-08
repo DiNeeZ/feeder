@@ -9,7 +9,6 @@ const AboutSection = () => (
   <Section title="About Feeder" href="/about">
     <div className="flex flex-col gap-8">
       {about.slice(0, 3).map((item, index) => {
-        console.log(item.id);
         return (
           <ImageTextBlock
             key={item.id}

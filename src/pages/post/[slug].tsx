@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { GetServerSideProps } from "next";
 
 import Layout from "@/components/layout";
@@ -9,12 +9,15 @@ import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
 import { urlForImage } from '../../../sanity/lib/image';
 
+
 // Barebones lazy-loaded image component
-const SampleImageComponent = ({ value }: { value: PostBodyImage }) => {
+const SampleImageComponent = ({ value, index }: { value: PostBodyImage, index: number }) => {
+  const imagePosition = index % 2 === 0 ? 'start' : 'end'
+
   return (
-    <div className="flex justify-center">
+    <div className={`flex justify-${imagePosition} mb-8`}>
       <Image
-        className=" w-1/2 max-h-96 object-cover mb-8 rounded-2xl"
+        className="w-full md:w-2/3 max-h-96 object-cover rounded-2xl"
         src={urlForImage(value).url()}
         alt={value.subpicDescr}
         width={900}
@@ -30,12 +33,11 @@ const components: PortableTextComponents = {
     h3: ({ children }) => (
       <h3 className="text-2xl text-blue-950 font-semibold mb-8">{children}</h3>
     ),
-    normal: ({ children }) => <p className=" mb-8">{children}</p>,
+    normal: ({ children }) => <p className="mb-8">{children}</p>,
   },
 };
 
 const Post = ({ post }: { post: Post }) => {
-  console.log(post);
   return (
     <Layout>
       <div className="container mx-auto pt-12 mb-24 border-t border-blue-400">
