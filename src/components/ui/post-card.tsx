@@ -1,4 +1,4 @@
-import { urlFor } from "@/lib/sanity-client";
+import { urlForImage } from '../../../sanity/lib/image';
 import React from "react";
 import type { Post } from "@/types";
 import Image from "next/image";
@@ -8,7 +8,7 @@ const PostCard = ({ post }: { post: Post }) => {
   return (
     <article className="border flex flex-col rounded-lg overflow-hidden shadow-lg">
       <Image
-        src={urlFor(post.cover).width(500).height(300).url()}
+        src={urlForImage(post.cover).width(500).height(300).url()}
         alt={post.cover.caption}
         width={500}
         height={300}

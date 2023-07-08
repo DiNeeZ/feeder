@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import { client } from "../../lib/sanity-client";
+import { client } from "../../../sanity/lib/client";
 
 export type ResponseError = {
   message: string;

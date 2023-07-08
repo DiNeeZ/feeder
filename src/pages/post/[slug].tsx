@@ -7,7 +7,7 @@ import { Post, PostBodyImage } from "@/types";
 import { loadPostBySlug } from "../api/posts";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
-import { urlFor } from "@/lib/sanity-client";
+import { urlForImage } from '../../../sanity/lib/image';
 
 // Barebones lazy-loaded image component
 const SampleImageComponent = ({ value }: { value: PostBodyImage }) => {
@@ -15,7 +15,7 @@ const SampleImageComponent = ({ value }: { value: PostBodyImage }) => {
     <div className="flex justify-center">
       <Image
         className=" w-1/2 max-h-96 object-cover mb-8 rounded-2xl"
-        src={urlFor(value).url()}
+        src={urlForImage(value).url()}
         alt={value.subpicDescr}
         width={900}
         height={384}
@@ -44,7 +44,7 @@ const Post = ({ post }: { post: Post }) => {
             <PageTitle>{post.title}</PageTitle>
           </div>
           <Image
-            src={urlFor(post.cover).width(1000).height(400).url()}
+            src={urlForImage(post.cover).width(1000).height(400).url()}
             width={1000}
             height={400}
             alt={post.title}

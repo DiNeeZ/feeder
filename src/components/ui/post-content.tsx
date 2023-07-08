@@ -1,5 +1,5 @@
 import React from "react";
-import { urlFor } from "@/lib/sanity-client";
+// import { urlFor } from "@/lib/sanity-client";
 import Image from "next/image";
 import type { PostBody } from "@/types";
 
